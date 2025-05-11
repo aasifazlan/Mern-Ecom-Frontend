@@ -1,0 +1,3 @@
+ --->we config vite with the command => npm create vite@latest
+----> we install node modules with the command   => npm i
+---->install dependencies with the command => npm i axios @stripe/stripe-js framer-motion lucide-react react-confetti react-hot-toast react-router-dom recharts zustand
