@@ -12,8 +12,7 @@ const LoginPage = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log({email, password});
-		login({email, password}); // make sure you pass email and password in object else it will in pending state
+		login({email, password}); 
 	};
 
 	return (
