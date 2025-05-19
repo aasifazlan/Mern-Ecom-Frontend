@@ -19,7 +19,7 @@ export const useProductStore = create((set) => ({
 			}));
 		} catch (error) {
 			console.error('Error creating product:', error.response);
-			toast.error(error.response.data.error);
+			toast.error(error?.response?.data?.message || "Something went wrong");
 			set({ loading: false });
 		}
 	},

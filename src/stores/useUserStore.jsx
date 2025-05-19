@@ -18,6 +18,7 @@ export const useUserStore=create((set, get)=> ({
      try {
         const res= await axios.post("/auth/signup", {name, email, password})
         set({user:res.user, loading:false})
+        toast.success('Signed up successfully');
      } catch (error) {
         toast.error(error.response.data.message || 'An error occurred') 
      }
@@ -70,6 +71,7 @@ export const useUserStore=create((set, get)=> ({
 		set({ checkingAuth: true });
 		try {
 			const response = await axios.post("/auth/refresh-token");
+            await get().checkAuth();
 			set({ checkingAuth: false });
 			return response.data;
 		} catch (error) {
